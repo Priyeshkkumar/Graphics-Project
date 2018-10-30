@@ -165,24 +165,16 @@ if(g==1)
 
 setcolor(1);
 settextstyle(3,0,10);
-outtextxy(40,140,"THANKS");
+outtextxy(40,140,"YOU WON");
 getch() ;
 exit(1);
 }
 else
 {
 
-for(int i=1;i<=8;++i)
-{
-setcolor(i+1);
-settextstyle(1,0,i);
+setcolor(1);
+settextstyle(1,0,9);
 outtextxy(40,140,"GAME OVER");
-delay(100);
-
-setcolor(0);
-settextstyle(1,0,i-1);
-outtextxy(40,140,"GAME OVER");
-}
 delay(1000);
 exit(1);
 
@@ -226,7 +218,7 @@ void mainscreen()
 	outtextxy(465,50,"Press ESC for exit ");
 while(1)
 {
-	if(p<2000)
+	if(p<10000)
 	{
 	setfillstyle(1,15);
 	bar3d(550,350-p/10,560,350,0,0);
@@ -234,10 +226,10 @@ while(1)
 	sound(p);
 
 
-	if(p>2000)
+	if(p>10000)
 	{
 	 gotoxy(30,15);
-	 printf("level 1 CLEARED");
+	 printf("level 2 CLEARED");
 	 nosound();
 	 delay(2000);
 	 exite(1);
@@ -266,10 +258,10 @@ while(1)
 	setcolor(8);
 
 		//obstacle 1
-	if(p==20)
+	if(p%2000==20)
 	j=0;
 
-	if(p>20 && p<499)
+	if(p%2000>20 && p%2000<499)
 	{
 	check(370,x1,j++,i);
 	check(330,x1,k-60,k);
@@ -277,9 +269,9 @@ while(1)
 	}
 
 	//obstacle
-	if(p==1800)
+	if(p%2000==1800)
 	k=0;
-	if(p>1800 && p<2000)
+	if(p%2000>1800 && p%2000<2000)
 	{
 	check(370,x1,k,2);
 	check(230,x1,k-100,BLUE);
@@ -287,10 +279,10 @@ while(1)
 
 	}
 	//obstacle
-	if(p==900)
+	if(p%2000==900)
 	k=0;
 
-	if(p>900 && p<1400)
+	if(p%2000>900 && p%2000<1400)
 	{
 	check(370,x1,k,14);
 	check(230,x1,k-200,RED);
@@ -299,10 +291,10 @@ while(1)
 
 
 	//obstacle 2
-	if(p==500)
+	if(p%2000==500)
 	j=0;
 
-	if(p>500 && p<1000)
+	if(p%2000>500 && p%2000<1000)
 	{
 	check(370,x1,k,14);
 	check(230,x1,j,YELLOW);
@@ -311,10 +303,10 @@ while(1)
 	}
 
 	//obstacle 3
-	if(p==1200)
+	if(p%2000==1200)
 	j=0;
 
-	if(p>1200 && p<1700)
+	if(p%2000>1200 && p%2000<1700)
 	{
 	check(270,x1,j,6);
 	j++;
@@ -322,10 +314,10 @@ while(1)
 
 
 	//obstacle 4
-	if(p==1500)
+	if(p%2000==1500)
 	k=0;
 
-	if(p>1500 && p<2000)
+	if(p%2000>1500 && p%2000<2000)
 	{
 	check(320,x1,k-60,3);
 	check(360,x1,j,11);
@@ -334,10 +326,10 @@ while(1)
 	}
 
 	//obstacle 4
-	if(p==200)
+	if(p%2000==200)
 	k=0;
 
-	if(p>200 && p<700)
+	if(p%2000>200 && p%2000<700)
 	{
 	check(230,x1,k,12);
 	check(380,x1,k-130,13);
